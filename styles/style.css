@@ -1,0 +1,205 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: rgb(255, 255, 255);
+	color: rgb(86, 78, 78);
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	text-rendering: optimizeLegibility;
+
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  /*border: 1px solid red;*/
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+header {
+	background-image: url(../images/les-priroda-doroga-derevia.jpg);
+	/*background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(../images/header-background-image2.jpg);*/
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+}
+
+h1 {
+	margin: 0;
+}
+
+.header-text {
+	padding-top: 300px;
+	text-align: center;
+}
+
+#logo-image {
+	height: 50px;
+	width: auto;
+	float: left;
+	margin-left: 40px;
+	margin-top: 8px;
+}
+
+#header-title {
+	/*max-width: 50%;*/
+	/*margin-left: 8.33%;*/
+	/*margin: auto;*/
+	background: #fff;
+	padding: 15px;
+	text-transform: uppercase;
+	/*color: #fff;*/
+	color: #171717;
+	letter-spacing: 0.1em;
+	font-size: 3.0em;
+	line-height: 1em;
+	font-weight: 400;
+	font-style: normal;
+	/*border: 3px solid #fff;*/
+}
+
+#header-buttons {
+	margin-top: 70px;
+	/*margin-left: 8.33%;*/
+	padding: 12px;
+}
+
+#logo-text {
+	float: left;
+}
+
+#main-nav {
+	float: right;
+	list-style: none;
+	letter-spacing: 2px;
+}
+
+#main-nav li {
+	display: inline-block;
+	margin-right: 30px;
+	font-size: 0.9em;
+}
+
+#main-nav li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #171717;
+}
+
+#logo-text a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #171717;
+	letter-spacing: 12px;
+	padding-left: 15px;
+}
+
+nav {
+	background: #fff;
+	height: 70px;
+	padding: 23px;
+}
+
+.button:link,
+.button:visited {
+	display: inline-block;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: #171717;
+	border-radius: 30px;
+	transition: background-color 0.3s, border 0.3s;
+}
+
+.button-read:link,
+.button-read:visited {
+	border: 2px solid #fff;
+	color: #fff;
+	font-weight: 500;
+}
+
+.button-contact:link,
+.button-contact:visited {
+	background: rgb(255, 114, 0);
+	color: #fff;
+	border: 2px solid rgb(255, 114, 0);
+}
+
+/*.button:hover,
+.button:active {
+}*/
+
+.button-read:hover,
+.button-read:active {
+	background: #fff;
+	border: 2px solid #fff;
+	color: rgb(255, 114, 0);
+
+}
+
+.button-contact:hover,
+.button-contact:active {
+	background: transparent;
+	border: 2px solid rgb(255, 114, 0);
+	color: #fff;
+}
+
+#line {
+	text-align: center;
+	margin-top: 10px;
+	background: #fff;
+	padding: 5px;
+}
+
+.widget1 {
+	padding: 150px 200px 0px 200px;
+	font-weight: 350;
+	font-size: 2.0em;
+
+}
+.line {
+	padding-top: 40px;
+	padding-left: 200px;
+	padding-bottom: 80px;
+
+}
+.moto-line {
+	max-width: 100%;
+    width: 95px;
+	border-top-width: 5px;
+    border-top-style: solid;
+    border-top-color: #1b1613;
+
+
+}
+
+.widget2 {
+	padding-left: 200px;
+	padding-bottom: 50px
+}
+.moto-wel {
+	font-weight: 200;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    color: #1b1613;
+    font-size: 47px;
+    line-height: 1.1;
+    letter-spacing: 0px;
+
+}
