@@ -257,3 +257,40 @@ Welkome styles
 	line-height: 1.5vw;
 	font-weight: 300;
 }
+
+
+
+
+
+
+
+
+/***************
+adaptation
+*****************/
+
+@media only screen and (max-width: 1366px) {
+	.header-text {
+		padding-top: 210px;
+	}
+	
+	nav {
+		height: 54px;
+		padding: 15px;
+	}
+
+	#logo-image {
+		height: 50px;
+		margin-top: 0px;
+	}
+
+	#description_welcome {
+		padding-left: 200px;
+	}
+	
+	#description_welcome_2 {
+		padding-right: 200px;
+	}
+
+
+}
