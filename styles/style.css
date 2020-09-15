@@ -114,10 +114,17 @@ header {
 	font-size: 0.9em;
 }
 
-#main-nav li a {
+#main-nav li a:link,
+#main-nav li a:visited {
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #171717;
+	transition: 0.3s;
+}
+
+#main-nav li a:hover,
+#main-nav li a:active {
+	color: rgb(255, 114, 0);
 }
 
 #logo-text a {
@@ -162,16 +169,19 @@ Button styles
 	border: 2px solid rgb(255, 114, 0);
 }
 
-/*.button:hover,
-.button:active {
-}*/
+.button-read-welcome:link,
+.button-read-welcome:visited {
+	background: #fff;
+	border: 3px solid #171717;
+	color: #171717;
+	font-weight: 500;
+}
 
 .button-read:hover,
 .button-read:active {
 	background: #fff;
 	border: 2px solid #fff;
 	color: rgb(255, 114, 0);
-
 }
 
 .button-contact:hover,
@@ -180,6 +190,16 @@ Button styles
 	border: 2px solid rgb(255, 114, 0);
 	color: #fff;
 }
+
+
+.button-read-welcome:hover,
+.button-read-welcome:active {
+	background: #171717;
+	border: 3px solid #171717;
+	color: rgb(255, 114, 0);
+}
+
+
 
 #line {
 	text-align: center;
@@ -242,20 +262,24 @@ Welkome styles
 
 #description_welcome {
 	width: 100%;
-	/* text-align: center; */
-	padding: 50px 100px 50px 300px;
+	padding: 7% 10% 7% 35%;
 	color: #171717;
-	line-height: 1.5vw;
+	line-height: 1.8vw;
 	font-weight: 300;
 }
 
 #description_welcome_2 {
 	width: 100%;
-	/* text-align: center; */
-	padding: 50px 300px 50px 100px;
+	padding: 7% 35% 7% 10%;
 	color: #171717;
-	line-height: 1.5vw;
+	line-height: 1.8vw;
 	font-weight: 300;
+}
+
+#button-welcome {
+	/* text-align: center; */
+	margin-left: 35%;
+	margin-bottom: 7%;
 }
 
 
@@ -283,14 +307,4 @@ adaptation
 		height: 50px;
 		margin-top: 0px;
 	}
-
-	#description_welcome {
-		padding-left: 200px;
-	}
-	
-	#description_welcome_2 {
-		padding-right: 200px;
-	}
-
-
 }
