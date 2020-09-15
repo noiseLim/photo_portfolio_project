@@ -311,7 +311,7 @@ Services style
 
 #left-side-serv {
 	background: rgb(27, 22, 19);
-	height: 900px;
+	height: 1000px;
 }
 
 #left-side-serv h2 {
@@ -319,7 +319,7 @@ Services style
 	color: #fff;
 	font-weight: 350;
 	font-size: 2.0em;
-	margin-top: 180px;
+	margin-top: 220px;
 }
 
 #left-side-serv h2:after {
@@ -361,8 +361,8 @@ Services style
 }
 
 #right-side-serv {
-	background-image: url(../images/girls-foto4-2.jpg);
-	height: 900px;
+	background-image: url(../images/girls-foto3-2.2.jpg);
+	height: 1000px;
 	background-position: center;
 	background-size: cover;
 	/* background-attachment: fixed; */
@@ -370,16 +370,16 @@ Services style
 
 #types-shoots {
 	letter-spacing: 2px;
-	line-height: 3.5vw;
-	margin-top: 210px;
-	margin-left: 17%;
+	line-height: 50px;
+	margin-top: 250px;
+	margin-left: 5%;
 	/* margin-left: 50px; */
 }
 
 #types-shoots li {
 	font-size: 1.2em;
 	list-style-type: none;
-	color: rgb(27, 22, 19);
+	color: #fff;
 }
 
 #types-shoots li:before {
@@ -389,13 +389,14 @@ Services style
 #right-side-serv li a:link,
 #right-side-serv li a:visited {
 	text-decoration: none;
-	/* color: rgb(255, 114, 0); */
-	color: rgb(27, 22, 19);
+	color: rgb(255, 114, 0);
+	/* color: rgb(27, 22, 19); */
 }
 
 #right-side-serv li a:hover,
 #right-side-serv li a:active {
 	color: #fff;
+	/* color: rgb(27, 22, 19); */
 }
 
 
