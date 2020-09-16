@@ -380,6 +380,8 @@ Services style
 	font-size: 1.2em;
 	list-style-type: none;
 	color: #fff;
+	/* text-shadow: #171717 1px 1px 0, #171717 -1px -1px 0, 
+				 #171717 -1px 1px 0, #171717 1px -1px 0; */
 }
 
 #types-shoots li:before {
@@ -399,10 +401,50 @@ Services style
 	/* color: rgb(27, 22, 19); */
 }
 
+/**********************
+Home Small Gallery styles
+*********************/
 
+#section-home-small-gallery {
+	padding: 0;
+}
 
+.images-container {
+	list-style: none;
+	width: 100%;
+}
 
+.images-container li {
+	display: block;
+	float: left;
+	width: 25%;
+}
 
+.photo-image {
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+
+}
+
+.photo-image img {
+	width: 100%;
+	height: auto;
+	transform: scale(1.05);
+}
+
+.photo-image h1 {
+	position: absolute;
+	z-index: 2;
+	margin-top: 250px;
+	text-align: center;
+	width: 25%;
+	text-transform: uppercase;
+	font-weight: 300;
+    color: #fff;
+    font-size: 45px;
+	letter-spacing: 4px;
+}
 
 
 
