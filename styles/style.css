@@ -11,7 +11,7 @@ Common styles
 body {
 	background: rgb(255, 255, 255);
 	color: rgb(86, 78, 78);
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	font-size: 20px;
 	text-rendering: optimizeLegibility;
@@ -114,6 +114,7 @@ header {
 	display: inline-block;
 	margin-right: 30px;
 	font-size: 0.9em;
+	font-weight: 500;
 }
 
 #main-nav li a:link,
@@ -135,6 +136,7 @@ header {
 	color: #171717;
 	letter-spacing: 12px;
 	padding-left: 15px;
+	font-weight: 500;
 }
 
 nav {
@@ -169,6 +171,7 @@ Button styles
 	background: rgb(255, 114, 0);
 	color: #fff;
 	border: 2px solid rgb(255, 114, 0);
+	font-weight: 500;
 }
 
 .button-read-welcome:link,
@@ -176,7 +179,7 @@ Button styles
 	background: #fff;
 	border: 3px solid #171717;
 	color: #171717;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .button-read-services:link,
@@ -184,7 +187,7 @@ Button styles
 	background: rgb(27, 22, 19);
 	border: 3px solid #fff;
 	color: #fff;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .button-read-vision:link,
@@ -192,7 +195,7 @@ Button styles
 	background: rgb(255, 114, 0);
 	border: 3px solid #fff;
 	color: #fff;
-	font-weight: 500;
+	font-weight: 600;
 
 }
 
@@ -201,6 +204,7 @@ Button styles
 	background: #fff;
 	border: 2px solid #fff;
 	color: rgb(255, 114, 0);
+	font-weight: 500;
 }
 
 .button-contact:hover,
@@ -208,6 +212,7 @@ Button styles
 	background: transparent;
 	border: 2px solid rgb(255, 114, 0);
 	color: #fff;
+	font-weight: 500;
 }
 
 
@@ -216,6 +221,7 @@ Button styles
 	background: #171717;
 	border: 3px solid #171717;
 	color: rgb(255, 114, 0);
+	font-weight: 600;
 }
 
 .button-read-services:hover,
@@ -223,6 +229,7 @@ Button styles
 	background: #fff;
 	border: 3px solid #fff;
 	color: rgb(255, 114, 0);
+	font-weight: 600;
 }
 
 .button-read-vision:hover,
@@ -230,6 +237,7 @@ Button styles
 	background: #fff;
 	border: 3px solid #fff;
 	color: rgb(255, 114, 0);
+	font-weight: 600;
 }
 
 
@@ -249,8 +257,9 @@ Button styles
 }
 
 .widget1 p {
-	font-weight: 350;
-	font-size: 2.0em;
+	font-weight: 400;
+	font-size: 1.8em;
+	color: #1b1613;
 }
 
 .line {
@@ -275,9 +284,7 @@ Button styles
 
 .moto-wel {
 	text-transform: uppercase;
-	font-weight: 200;
-    font-style: normal;
-    font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
     color: #1b1613;
     font-size: 47px;
     line-height: 1.1;
@@ -353,8 +360,6 @@ Services style
 	margin-top: 80px;
 	text-transform: uppercase;
 	font-weight: 200;
-    font-style: normal;
-    font-family: 'Montserrat', sans-serif;
     color: #fff;
     font-size: 45px;
     line-height: 1.1;
@@ -397,6 +402,7 @@ Services style
 	font-size: 1.2em;
 	list-style-type: none;
 	color: #171717;
+	font-weight: 500;
 }
 
 #types-shoots li:before {
@@ -484,7 +490,7 @@ Vision and Values styles
 #vision-and-values-left h2 {
 	margin-left: 35%;
 	color: #fff;
-	font-weight: 350;
+	font-weight: 300;
 	font-size: 2.0em;
 	margin-top: 220px;
 }
@@ -503,8 +509,6 @@ Vision and Values styles
 	margin-top: 80px;
 	text-transform: uppercase;
 	font-weight: 200;
-    font-style: normal;
-    font-family: 'Montserrat', sans-serif;
     color: #fff;
     font-size: 45px;
     line-height: 1.1;
@@ -531,8 +535,66 @@ Vision and Values styles
 	height: 1000px;
 	background-position: right;
 	background-size: cover;
+
 }
 
+/****************************
+Images-gallery styles
+*****************************/
+
+#gallery {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	clear: both;
+	text-align: center;
+}
+
+#gallery h2 {
+	color: #171717;
+	font-weight: 300;
+	font-size: 2.5em;
+	text-transform: uppercase;
+}
+
+#gallery h2:after {
+	display: block;
+	height: 5px;
+	background-color: #171717;
+	content: " ";
+	width: 100px;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+
+.images-container-gallery {
+	list-style: none;
+	width: 100%;
+}
+
+.images-container-gallery li {
+	display: block;
+	width: 25%;
+	float: left;
+}
+
+.photo-image-gallery {
+	width: 100%;
+	overflow: hidden;
+	background: #000;
+}
+
+.photo-image-gallery img {
+	opacity: 0.7;
+	width: 100%;
+	height: auto;
+	transform: scale(1.2);
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.photo-image-gallery img:hover {
+	opacity: 1;
+	transform: scale(1.05);
+}
 
 
 
