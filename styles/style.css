@@ -187,6 +187,15 @@ Button styles
 	font-weight: 500;
 }
 
+.button-read-vision:link,
+.button-read-vision:visited {
+	background: rgb(255, 114, 0);
+	border: 3px solid #fff;
+	color: #fff;
+	font-weight: 500;
+
+}
+
 .button-read:hover,
 .button-read:active {
 	background: #fff;
@@ -215,6 +224,14 @@ Button styles
 	border: 3px solid #fff;
 	color: rgb(255, 114, 0);
 }
+
+.button-read-vision:hover,
+.button-read-vision:active {
+	background: #fff;
+	border: 3px solid #fff;
+	color: rgb(255, 114, 0);
+}
+
 
 
 
@@ -361,9 +378,9 @@ Services style
 }
 
 #right-side-serv {
-	background-image: url(../images/girls-foto3-2.2.jpg);
+	background-image: url(../images/girls-foto5-2.jpg);
 	height: 1000px;
-	background-position: center;
+	/* background-position: center; */
 	background-size: cover;
 	/* background-attachment: fixed; */
 }
@@ -371,17 +388,15 @@ Services style
 #types-shoots {
 	letter-spacing: 2px;
 	line-height: 50px;
-	margin-top: 250px;
+	font-weight: 400;
+	margin-top: 350px;
 	margin-left: 5%;
-	/* margin-left: 50px; */
 }
 
 #types-shoots li {
 	font-size: 1.2em;
 	list-style-type: none;
-	color: #fff;
-	/* text-shadow: #171717 1px 1px 0, #171717 -1px -1px 0, 
-				 #171717 -1px 1px 0, #171717 1px -1px 0; */
+	color: #171717;
 }
 
 #types-shoots li:before {
@@ -391,14 +406,12 @@ Services style
 #right-side-serv li a:link,
 #right-side-serv li a:visited {
 	text-decoration: none;
-	color: rgb(255, 114, 0);
-	/* color: rgb(27, 22, 19); */
+	color: #171717;
 }
 
 #right-side-serv li a:hover,
 #right-side-serv li a:active {
-	color: #fff;
-	/* color: rgb(27, 22, 19); */
+	color: rgb(255, 114, 0);
 }
 
 /**********************
@@ -431,6 +444,13 @@ Home Small Gallery styles
 	width: 100%;
 	height: auto;
 	transform: scale(1.05);
+	transition: transform 0.5s;
+}
+
+.photo-image img:hover {
+	width: 100%;
+	height: auto;
+	transform: scale(1.2);
 }
 
 .photo-image h1 {
@@ -447,16 +467,71 @@ Home Small Gallery styles
 }
 
 
+/*************************
+Vision and Values styles
+***************************/
+
+#section-vision-and-values {
+	padding: 0;
+
+}
+
+#vision-and-values-left {
+	background: rgb(255, 114, 0);
+	height: 1000px;
+}
+
+#vision-and-values-left h2 {
+	margin-left: 35%;
+	color: #fff;
+	font-weight: 350;
+	font-size: 2.0em;
+	margin-top: 220px;
+}
+
+#vision-and-values-left h2:after {
+	display: block;
+	height: 5px;
+	background-color: #fff;
+	content: " ";
+	width: 150px;
+	margin-top: 30px;
+}
+
+#vision-and-values-left h1 {
+	margin-left: 35%;
+	margin-top: 80px;
+	text-transform: uppercase;
+	font-weight: 200;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 45px;
+    line-height: 1.1;
+	letter-spacing: 0px;
+}
+
+#vision-and-values-left p {
+	margin-left: 35%;
+	margin-top: 60px;
+	margin-right: 3%;
+	margin-bottom: 7%;
+	color: #fff;
+	line-height: 1.9vw;
+    font-weight: 300;
+}
+
+#button-vision {
+	margin-left: 35%;
+}
 
 
-
-
-
-
-
-
-
-
+#vision-and-values-right {
+	background-image: url(../images/girls-foto3-2.2.jpg);
+	height: 1000px;
+	background-position: right;
+	background-size: cover;
+}
 
 
 
