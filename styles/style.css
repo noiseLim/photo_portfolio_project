@@ -50,6 +50,14 @@ img {
 	border-style: none;
 }
 
+.float-clearing:after {
+	zoom: 1;
+	content: " ";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
 
 /****************************
 Header styles
@@ -608,12 +616,82 @@ Images-gallery styles
 	padding-top: 40px;
 }
 
+/***********************
+Contact-Us styles
+***********************/
 
+#section-contact-us {
+	background: rgb(27, 22, 19);
+}
 
+#contact-us {
+	width: 50%;
+	display: block;
+	clear: both;
+	margin-top: 50px;
+}
 
+#contact-us h2 {
+	margin-left: 35%;
+	color: #fff;
+	font-weight: 350;
+	font-size: 2.0em;
+}
 
+#contact-us h2:after {
+	display: block;
+	height: 5px;
+	background-color: #fff;
+	content: " ";
+	width: 150px;
+	margin-top: 30px;
+}
 
+#contact-us h1 {
+	margin-left: 35%;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	text-transform: uppercase;
+	font-weight: 400;
+    color: #fff;
+    font-size: 45px;
+    line-height: 1.1;
+	letter-spacing: 0px;
+}
 
+/*********************
+Contact form
+********************/
+
+.float-clearing {
+	zoom: 1;
+}
+
+#contact-form {
+	width: 67%;
+	margin: 0 auto;
+	/* margin-right: 80px; */
+	font-size: 90%;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+	width: 100%;
+	padding: 5px;
+	background: rgb(74, 74, 68);
+	
+	/* border-radius: 5px; */
+	/* border: 2px solid rgb(255, 114, 0); */
+}
+
+textarea {
+	height: 120px;
+}
+
+::placeholder {
+	color: #fff;
+}
 
 /****************************
 Media Query styles
