@@ -196,7 +196,14 @@ Button styles
 	border: 3px solid #fff;
 	color: #fff;
 	font-weight: 600;
+}
 
+.button-view-all:link,
+.button-view-all:visited {
+	background: #fff;
+	border: 3px solid #171717;
+	color: #171717;
+	font-weight: 600;
 }
 
 .button-read:hover,
@@ -240,15 +247,20 @@ Button styles
 	font-weight: 600;
 }
 
+.button-view-all:hover,
+.button-view-all:active {
+	background: #171717;
+	border: 3px solid #171717;
+	color: rgb(255, 114, 0);
+	font-weight: 600;
+}
 
+/***********************
+Pre-Welkome styles
+***********************/
 
-
-
-#line {
-	text-align: center;
-	margin-top: 10px;
-	background: #fff;
-	padding: 5px;
+#pre-welcome {
+	padding-bottom: 0px;
 }
 
 .widget1 {
@@ -274,8 +286,6 @@ Button styles
 	border-top-width: 5px;
     border-top-style: solid;
     border-top-color: #1b1613;
-
-
 }
 
 .widget2 {
@@ -290,10 +300,6 @@ Button styles
     line-height: 1.1;
     letter-spacing: 0px;
 
-}
-
-#welcome {
-	padding-bottom: 0px;
 }
 
 /***********************
@@ -462,7 +468,7 @@ Home Small Gallery styles
 .photo-image h1 {
 	position: absolute;
 	z-index: 2;
-	margin-top: 250px;
+	margin-top: 18%;
 	text-align: center;
 	width: 25%;
 	text-transform: uppercase;
@@ -596,6 +602,11 @@ Images-gallery styles
 	transform: scale(1.05);
 }
 
+#button-view-all {
+	clear: both;
+	text-align: center;
+	padding-top: 40px;
+}
 
 
 
