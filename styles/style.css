@@ -158,13 +158,15 @@ Button styles
 *****************************/
 
 .button:link,
-.button:visited {
+.button:visited,
+input[type=submit] {
 	display: inline-block;
 	padding: 10px 25px;
 	text-decoration: none;
 	color: #171717;
 	border-radius: 30px;
 	transition: background-color 0.3s, border 0.3s;
+	font-weight: 600;
 }
 
 .button-read:link,
@@ -187,7 +189,6 @@ Button styles
 	background: #fff;
 	border: 3px solid #171717;
 	color: #171717;
-	font-weight: 600;
 }
 
 .button-read-services:link,
@@ -195,7 +196,6 @@ Button styles
 	background: rgb(27, 22, 19);
 	border: 3px solid #fff;
 	color: #fff;
-	font-weight: 600;
 }
 
 .button-read-vision:link,
@@ -203,7 +203,6 @@ Button styles
 	background: rgb(255, 114, 0);
 	border: 3px solid #fff;
 	color: #fff;
-	font-weight: 600;
 }
 
 .button-view-all:link,
@@ -211,7 +210,6 @@ Button styles
 	background: #fff;
 	border: 3px solid #171717;
 	color: #171717;
-	font-weight: 600;
 }
 
 .button-read:hover,
@@ -236,7 +234,6 @@ Button styles
 	background: #171717;
 	border: 3px solid #171717;
 	color: rgb(255, 114, 0);
-	font-weight: 600;
 }
 
 .button-read-services:hover,
@@ -244,7 +241,6 @@ Button styles
 	background: #fff;
 	border: 3px solid #fff;
 	color: rgb(255, 114, 0);
-	font-weight: 600;
 }
 
 .button-read-vision:hover,
@@ -252,7 +248,6 @@ Button styles
 	background: #fff;
 	border: 3px solid #fff;
 	color: rgb(255, 114, 0);
-	font-weight: 600;
 }
 
 .button-view-all:hover,
@@ -260,7 +255,21 @@ Button styles
 	background: #171717;
 	border: 3px solid #171717;
 	color: rgb(255, 114, 0);
-	font-weight: 600;
+}
+
+input[type=submit] {
+	background: rgb(255, 114, 0);
+	color: #fff;
+	border: 3px solid rgb(255, 114, 0);
+	width: 150px;
+}
+
+input[type=submit]:hover,
+input[type=submit]:active {
+	background: transparent;
+	color: #fff;
+	border: 3px solid rgb(255, 114, 0);
+	width: 150px;
 }
 
 /***********************
@@ -622,20 +631,26 @@ Contact-Us styles
 
 #section-contact-us {
 	background: rgb(27, 22, 19);
+	display: block;
+
+}
+
+#contact-us-left {
+	width: 50%;
+	background: rgb(27, 22, 19);
 }
 
 #contact-us {
-	width: 50%;
-	display: block;
+	width: 100%;
+	margin: 0 auto;
 	clear: both;
-	margin-top: 50px;
 }
 
 #contact-us h2 {
-	margin-left: 35%;
+	margin-left: 15%;
 	color: #fff;
 	font-weight: 350;
-	font-size: 2.0em;
+	font-size: 1.8em;
 }
 
 #contact-us h2:after {
@@ -648,7 +663,7 @@ Contact-Us styles
 }
 
 #contact-us h1 {
-	margin-left: 35%;
+	margin-left: 15%;
 	margin-top: 80px;
 	margin-bottom: 80px;
 	text-transform: uppercase;
@@ -668,9 +683,9 @@ Contact form
 }
 
 #contact-form {
-	width: 67%;
-	margin: 0 auto;
-	/* margin-right: 80px; */
+	clear: both;
+	margin-left: 12%;
+	width: 100%;
 	font-size: 90%;
 }
 
@@ -680,18 +695,62 @@ textarea {
 	width: 100%;
 	padding: 5px;
 	background: rgb(74, 74, 68);
-	
-	/* border-radius: 5px; */
-	/* border: 2px solid rgb(255, 114, 0); */
 }
 
 textarea {
-	height: 120px;
+	height: 200px;
 }
 
 ::placeholder {
 	color: #fff;
 }
+
+#map-right {
+	width: 50%;
+	background: rgb(27, 22, 19);
+
+}
+
+/***************************
+Social-links
+***************************/
+
+#social-links {
+	/* width: 50%; */
+	clear: both;
+	text-align: center;
+	list-style: none;
+	color: #fff;
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+
+#social-links li {
+	display: inline-block;
+	margin-right: 30px;
+	font-size: 0.9em;
+
+}
+
+#social-links li a:link, 
+#social-links li a:visited {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	transition: color 0.3s;
+	font-size: 150%;
+	/*transform: scale(1);*/
+}
+
+
+
+#social-links li a:hover, 
+#social-links li a:active {
+	/*transform: scale(1.2);*/
+	color: rgb(255, 114, 0);
+	
+}
+
 
 /****************************
 Media Query styles
