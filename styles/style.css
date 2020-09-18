@@ -59,6 +59,7 @@ img {
 	visibility: hidden;
 }
 
+
 /****************************
 Header styles
 *****************************/
@@ -632,12 +633,13 @@ Contact-Us styles
 #section-contact-us {
 	background: rgb(27, 22, 19);
 	display: block;
-
+	/* height: 900px; */
 }
 
 #contact-us-left {
 	width: 50%;
 	background: rgb(27, 22, 19);
+	height: 900px;
 }
 
 #contact-us {
@@ -647,7 +649,7 @@ Contact-Us styles
 }
 
 #contact-us h2 {
-	margin-left: 15%;
+	margin-left: 35%;
 	color: #fff;
 	font-weight: 350;
 	font-size: 1.8em;
@@ -663,7 +665,7 @@ Contact-Us styles
 }
 
 #contact-us h1 {
-	margin-left: 15%;
+	margin-left: 35%;
 	margin-top: 80px;
 	margin-bottom: 80px;
 	text-transform: uppercase;
@@ -684,7 +686,7 @@ Contact form
 
 #contact-form {
 	clear: both;
-	margin-left: 12%;
+	margin-left: 32%;
 	width: 100%;
 	font-size: 90%;
 }
@@ -708,6 +710,7 @@ textarea {
 #map-right {
 	width: 50%;
 	background: rgb(27, 22, 19);
+	height: 900px;
 
 }
 
@@ -716,40 +719,52 @@ Social-links
 ***************************/
 
 #social-links {
-	/* width: 50%; */
+	width: 100%;
 	clear: both;
-	text-align: center;
+	/* text-align: center; */
 	list-style: none;
 	color: #fff;
-	margin-left: 30px;
-	margin-bottom: 30px;
+	margin-top: 30px;
 }
 
 #social-links li {
 	display: inline-block;
 	margin-right: 30px;
-	font-size: 0.9em;
+	/* font-size: 0.9em; */
 
 }
 
 #social-links li a:link, 
 #social-links li a:visited {
-	text-decoration: none;
-	text-transform: uppercase;
-	color: #fff;
+	color: rgb(255, 114, 0);
 	transition: color 0.3s;
 	font-size: 150%;
-	/*transform: scale(1);*/
 }
 
 
 
 #social-links li a:hover, 
 #social-links li a:active {
-	/*transform: scale(1.2);*/
-	color: rgb(255, 114, 0);
-	
+	color: #fff;
 }
+
+/*****************
+Footer-style
+******************/
+
+footer {
+	padding: 50px 0;
+	background: linear-gradient(rgba(27, 22, 19, 1), rgba(27, 22, 19, 0.9));
+	/* background: rgb(27, 22, 19); */
+	text-align: center;
+	clear: both;
+}
+
+footer p {
+	font-size: 70%;
+	/* color: rgb(196, 176, 176); */
+}
+
 
 
 /****************************
