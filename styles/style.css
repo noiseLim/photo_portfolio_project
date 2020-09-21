@@ -15,7 +15,6 @@ body {
 	font-weight: 400;
 	font-size: 20px;
 	text-rendering: optimizeLegibility;
-
 }
 
 .col-1 {width: 8.33%;}
@@ -33,9 +32,9 @@ body {
 
 [class*="col-"] {
 	float: left;
-	padding: 15px;
-	/*border: 1px solid red;*/
-  }
+	/* padding: 15px; */
+	padding: 3%;
+}
 
 h1 {
 	margin: 0;
@@ -59,19 +58,17 @@ img {
 	visibility: hidden;
 }
 
-
 /****************************
 Header styles
 *****************************/
 
 header {
 	background-image: url(../images/les-priroda-doroga-derevia.jpg);
-	/*background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(../images/header-background-image2.jpg);*/
 	height: 100vh;
 	background-position: center;
 	background-size: cover;
+	background-attachment: fixed;
 }
-
 
 .header-text {
 	padding-top: 300px;
@@ -87,25 +84,19 @@ header {
 }
 
 #header-title {
-	/*max-width: 50%;*/
-	/*margin-left: 8.33%;*/
-	/*margin: auto;*/
 	background: #fff;
 	padding: 15px;
 	text-transform: uppercase;
-	/*color: #fff;*/
 	color: #171717;
 	letter-spacing: 0.1em;
 	font-size: 3.0vw;
 	line-height: 3vw;
 	font-weight: 400;
 	font-style: normal;
-	/*border: 3px solid #fff;*/
 }
 
 #header-buttons {
 	margin-top: 70px;
-	/*margin-left: 8.33%;*/
 	padding: 12px;
 }
 
@@ -121,7 +112,7 @@ header {
 
 #main-nav li {
 	display: inline-block;
-	margin-right: 30px;
+	margin-right: 1em;
 	font-size: 0.9em;
 	font-weight: 500;
 }
@@ -152,6 +143,13 @@ nav {
 	background: #fff;
 	height: 70px;
 	padding: 23px;
+}
+
+#line {
+	text-align: center;
+	margin-top: 10px;
+	background: #fff;
+	padding: 5px;
 }
 
 /****************************
@@ -283,7 +281,6 @@ Pre-Welkome styles
 
 .widget1 {
 	padding: 0px 200px 0px 200px;
-
 }
 
 .widget1 p {
@@ -296,8 +293,8 @@ Pre-Welkome styles
 	padding-top: 40px;
 	padding-left: 200px;
 	padding-bottom: 80px;
-
 }
+
 .moto-line {
 	max-width: 100%;
     width: 95px;
@@ -317,7 +314,6 @@ Pre-Welkome styles
     font-size: 47px;
     line-height: 1.1;
     letter-spacing: 0px;
-
 }
 
 /***********************
@@ -349,7 +345,6 @@ Welkome styles
 }
 
 #button-welcome {
-	/* text-align: center; */
 	margin-left: 35%;
 }
 
@@ -396,22 +391,18 @@ Services style
 	margin-right: 3%;
 	margin-bottom: 7%;
 	color: #fff;
-	line-height: 1.9vw;
+	line-height: 2.1vw;
     font-weight: 300;
 }
 
 #button-services {
-	/* text-align: center; */
 	margin-left: 35%;
-	/* margin-bottom: 200px; */
 }
 
 #right-side-serv {
 	background-image: url(../images/girls-foto5-2.jpg);
 	height: 1000px;
-	/* background-position: center; */
 	background-size: cover;
-	/* background-attachment: fixed; */
 }
 
 #types-shoots {
@@ -467,7 +458,6 @@ Home Small Gallery styles
 	width: 100%;
 	overflow: hidden;
 	text-align: center;
-
 }
 
 .photo-image img {
@@ -492,10 +482,9 @@ Home Small Gallery styles
 	text-transform: uppercase;
 	font-weight: 300;
     color: #fff;
-    font-size: 45px;
+    font-size: 3.5vw;
 	letter-spacing: 4px;
 }
-
 
 /*************************
 Vision and Values styles
@@ -503,7 +492,6 @@ Vision and Values styles
 
 #section-vision-and-values {
 	padding: 0;
-
 }
 
 #vision-and-values-left {
@@ -545,7 +533,7 @@ Vision and Values styles
 	margin-right: 3%;
 	margin-bottom: 7%;
 	color: #fff;
-	line-height: 1.9vw;
+	line-height: 2.1vw;
     font-weight: 300;
 }
 
@@ -559,7 +547,6 @@ Vision and Values styles
 	height: 1000px;
 	background-position: right;
 	background-size: cover;
-
 }
 
 /****************************
@@ -633,7 +620,6 @@ Contact-Us styles
 #section-contact-us {
 	background: rgb(27, 22, 19);
 	display: block;
-	/* height: 900px; */
 }
 
 #contact-us-left {
@@ -652,7 +638,8 @@ Contact-Us styles
 	margin-left: 35%;
 	color: #fff;
 	font-weight: 350;
-	font-size: 1.8em;
+	font-size: 2.6vw;
+	/* font-size: 1.8em; */
 }
 
 #contact-us h2:after {
@@ -708,10 +695,8 @@ textarea {
 }
 
 #map-right {
-	width: 50%;
 	background: rgb(27, 22, 19);
 	height: 900px;
-
 }
 
 /***************************
@@ -721,7 +706,6 @@ Social-links
 #social-links {
 	width: 100%;
 	clear: both;
-	/* text-align: center; */
 	list-style: none;
 	color: #fff;
 	margin-top: 30px;
@@ -730,8 +714,6 @@ Social-links
 #social-links li {
 	display: inline-block;
 	margin-right: 30px;
-	/* font-size: 0.9em; */
-
 }
 
 #social-links li a:link, 
@@ -753,19 +735,15 @@ Footer-style
 ******************/
 
 footer {
-	padding: 50px 0;
+	padding: 50px 0 20px;
 	background: linear-gradient(rgba(27, 22, 19, 1), rgba(27, 22, 19, 0.9));
-	/* background: rgb(27, 22, 19); */
 	text-align: center;
 	clear: both;
 }
 
 footer p {
 	font-size: 70%;
-	/* color: rgb(196, 176, 176); */
 }
-
-
 
 /****************************
 Media Query styles
@@ -786,3 +764,10 @@ Media Query styles
 		margin-top: 0px;
 	}
 }
+
+@media only screen and (max-width: 980px) {
+	[class*="col-"] {
+		width: 100%;
+	}
+}
+
