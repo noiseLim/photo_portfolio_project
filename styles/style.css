@@ -64,7 +64,7 @@ Header styles
 
 header {
 	background-image: url(../images/les-priroda-doroga-derevia.jpg);
-	height: 100vh;
+	height: 800px;
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
@@ -155,6 +155,10 @@ nav {
 /****************************
 Button styles
 *****************************/
+
+.button-services {
+	margin-left: 35%;
+}
 
 .button:link,
 .button:visited,
@@ -344,20 +348,17 @@ Welkome styles
 	font-weight: 300;
 }
 
-#button-welcome {
-	margin-left: 35%;
-}
 
 /************************
 Services style
 *************************/
 
-#left-side-serv {
+.left-side-serv {
 	background: rgb(27, 22, 19);
 	height: 1000px;
 }
 
-#left-side-serv h2 {
+.left-side-serv h2 {
 	margin-left: 35%;
 	color: #fff;
 	font-weight: 350;
@@ -365,7 +366,7 @@ Services style
 	margin-top: 220px;
 }
 
-#left-side-serv h2:after {
+.left-side-serv h2:after {
 	display: block;
 	height: 5px;
 	background-color: #fff;
@@ -374,7 +375,7 @@ Services style
 	margin-top: 30px;
 }
 
-#left-side-serv h1 {
+.left-side-serv h1 {
 	margin-left: 35%;
 	margin-top: 80px;
 	text-transform: uppercase;
@@ -385,7 +386,7 @@ Services style
 	letter-spacing: 0px;
 }
 
-#left-side-serv p {
+.left-side-serv p {
 	margin-left: 35%;
 	margin-top: 60px;
 	margin-right: 3%;
@@ -393,10 +394,6 @@ Services style
 	color: #fff;
 	line-height: 2.1vw;
     font-weight: 300;
-}
-
-#button-services {
-	margin-left: 35%;
 }
 
 #right-side-serv {
@@ -494,53 +491,10 @@ Vision and Values styles
 	padding: 0;
 }
 
-#vision-and-values-left {
+.vision-and-values-left {
 	background: rgb(255, 114, 0);
-	height: 1000px;
+	/* height: 1000px; */
 }
-
-#vision-and-values-left h2 {
-	margin-left: 35%;
-	color: #fff;
-	font-weight: 300;
-	font-size: 2.0em;
-	margin-top: 220px;
-}
-
-#vision-and-values-left h2:after {
-	display: block;
-	height: 5px;
-	background-color: #fff;
-	content: " ";
-	width: 150px;
-	margin-top: 30px;
-}
-
-#vision-and-values-left h1 {
-	margin-left: 35%;
-	margin-top: 80px;
-	text-transform: uppercase;
-	font-weight: 200;
-    color: #fff;
-    font-size: 45px;
-    line-height: 1.1;
-	letter-spacing: 0px;
-}
-
-#vision-and-values-left p {
-	margin-left: 35%;
-	margin-top: 60px;
-	margin-right: 3%;
-	margin-bottom: 7%;
-	color: #fff;
-	line-height: 2.1vw;
-    font-weight: 300;
-}
-
-#button-vision {
-	margin-left: 35%;
-}
-
 
 #vision-and-values-right {
 	background-image: url(../images/girls-foto3-2.2.jpg);
@@ -548,6 +502,80 @@ Vision and Values styles
 	background-position: right;
 	background-size: cover;
 }
+
+/******************************
+Preview
+*********************************/
+
+#section-preview {
+	padding: 50px;
+	background: #171717;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+
+	/* max-width: 100px; */
+	/* background: rgb(118, 138, 137); */
+	/* margin: 0 auto; */
+}
+
+.tabcontainer {
+	display: flex;
+	padding: 0;
+	/* width: 1600 px; */
+	background: #171717;
+}
+
+.tabcontent img {
+	/* background-position: center;
+	background-size: cover; */
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.tabcontent__descr {
+	position: absolute;
+    top: 4966px;
+    right: 30%;
+    width: 350px;
+    height: 259px;
+    background: rgba(251,254,93,.8);
+    padding: 25px;
+    font-weight: 300;
+    /* line-height: 36px; */
+    color: rgba(0,0,0,.7);
+}
+
+.tabheader {
+	background: rgb(255, 114, 0);
+	/* background: #171717; */
+}
+
+.tabheader__items {
+	margin-top: 20px;
+}
+
+.tabheader__item {
+	margin-bottom: 10px;
+	font-weight: 400;
+	color: rgba(0,0,0,.6);
+    cursor: pointer;
+    transition: .3s all;
+}
+
+
+.tabheader__item_active {
+	color: #171717;
+	font-size: 25px;
+	font-weight: 500;
+}
+
+
 
 /****************************
 Images-gallery styles
@@ -765,9 +793,4 @@ Media Query styles
 	}
 }
 
-@media only screen and (max-width: 750px) {
-	[class*="col-"] {
-		width: 100%;
-	}
-}
 
