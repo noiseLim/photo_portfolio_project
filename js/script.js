@@ -145,7 +145,9 @@ window.addEventListener('DOMContentLoaded', () => {
           current = document.querySelector('#current'),
           slidesWrapper = document.querySelector('.studio__slider-wrapper'),
           slidesField = document.querySelector('.studio__slider-inner'),
-          width = window.getComputedStyle(slidesWrapper).width;
+          width = window.getComputedStyle(slider).width;
+        //   width = window.getComputedStyle(slidesWrapper).getPropertyValue('width');
+        //   width = '800px';
 
     let slideIndex = 1,
         offset = 0;
@@ -173,7 +175,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const indicators = document.createElement('ol'),
           dots = [];
 
-    indicators.classList.add('.carousel-indicators');
+    indicators.classList.add('carousel-indicators');
     indicators.style.cssText = `
         position: absolute;
         right: 0;
@@ -275,7 +277,7 @@ window.addEventListener('DOMContentLoaded', () => {
             slideIndex = slideTo;
             offset = widthMode(width) * (slideTo - 1);
 
-            slidesField.style.transition = `translate(-${offset}px)`;
+            slidesField.style.transform = `translateX(-${offset}px)`;
 
             nilDecoration();
             opacityMode();

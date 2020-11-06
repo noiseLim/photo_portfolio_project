@@ -646,7 +646,8 @@ studio styles
     width: 100%;
     /* height: 200px; */
     height: 270px;
-    object-fit: cover;
+	object-fit: cover;
+	cursor: pointer;
 }
 
 .studio__item-subtitle {
@@ -1004,11 +1005,10 @@ Modal Foto style
 
 .studio__slider {
 	width: 800px;
-	height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-	margin: 25px auto;
+	margin: 50px auto;
 	background: #fff;
 }
 
@@ -1044,12 +1044,12 @@ Modal Foto style
 
 .studio__slide {
     width: 100%;
-    height: 390px
+    /* height: 390px */
 }
 
 .studio__slide img {
     width: 100%;
-    height: auto;
+    height: 100%;
 	object-fit: cover;
 }
 
