@@ -102,7 +102,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // modal studio
 
     const modalBlock = document.querySelector('.modal_studio'),
-          modalContent = document.querySelectorAll('[data-foto]');
+          modalContent = document.querySelectorAll('.container_studio');
           
 
     function openModalFoto() {
