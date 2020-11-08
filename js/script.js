@@ -1,4 +1,70 @@
 window.addEventListener('DOMContentLoaded', () => {
+
+        // studio cards
+
+        class StudioCards {
+            constructor (src, alt, title, descr, price, parentSelector, ...classes) {
+                this.src = src;
+                this.alt = alt;
+                this.title = title;
+                this.descr = descr;
+                this.price = price;
+                this.classes = classes;
+                this.parent = document.querySelector(parentSelector);
+            }
+    
+            render() {
+                const element = document.createElement('div');
+    
+                if (this.classes.length === 0) {
+                    this.classes = 'studio__item';
+                    element.classList.add(this.classes);
+                } else {
+                    this.classes.forEach(className => element.classList.add(className));
+                }
+    
+                element.innerHTML = `
+                    <img data-foto src=${this.src} alt=${this.alt}>
+                    <h3 class="studio__item-subtitle">${this.title}</h3>
+                    <div class="studio__item-descr">${this.descr}</div>
+                    <div class="studio__item-divider"></div>
+                    <div class="studio__item-price">
+                        <div class="studio__item-cost">Price:</div>
+                        <div class="studio__item-total"><span>${this.price}</span> rub/hour</div>
+                    </div>
+                `;
+    
+                this.parent.append(element);
+    
+            }
+        }
+    
+        new StudioCards(
+            "images/A170_2.jpg",
+            "A170",
+            'Studio A170',
+            "170 m2<br>Cyclorama 8х5 m<br>Power connector 32А<br>Power connector 63А<br>Make-up artist's workplace<br>4 x Profoto D1",
+            3000,
+            '.container_studio',
+        ).render();
+        
+        new StudioCards(
+            "images/A120_4.jpg",
+            "A120",
+            'Studio A120',
+            "A room with white walls and a large cyclorama is a classic solution for a photo studio.<br><br>120 m2<br>Circular cyclorama 6x7 m<br>4 x Profoto D1<br>Ceilings 5m<br>Windows along the entire length of the hall<br>Spacious dedicated space for makeup artist work<br>Power connector 32A<br>Grunge wall, which effectively contrasts with the general interior of the hall<br>Audio system",
+            2200,
+            '.container_studio',
+        ).render();
+    
+        new StudioCards(
+            "images/A85_5.jpg",
+            "A85",
+            'Studio A185',
+            "85 m2<br>Cyclorama 5x5 m<br>Profoto<br>Dark wood floors<br>Power connector 32А<br>Dedicated dressing area<br>Grunge wall from the time of the building<br>3 x Profoto D1",
+            1700,
+            '.container_studio',
+        ).render();
     
     //tabs
     
@@ -102,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // modal studio
 
     const modalBlock = document.querySelector('.modal_studio'),
-          modalContent = document.querySelectorAll('.container_studio');
+          modalContent = document.querySelectorAll('[data-foto]');
           
 
     function openModalFoto() {
@@ -284,71 +350,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // studio cards
-
-    class StudioCards {
-        constructor (src, alt, title, descr, price, parentSelector, ...classes) {
-            this.src = src;
-            this.alt = alt;
-            this.title = title;
-            this.descr = descr;
-            this.price = price;
-            this.classes = classes;
-            this.parent = document.querySelector(parentSelector);
-        }
-
-        render() {
-            const element = document.createElement('div');
-
-            if (this.classes.length === 0) {
-                this.classes = 'studio__item';
-                element.classList.add(this.classes);
-            } else {
-                this.classes.forEach(className => element.classList.add(className));
-            }
-
-            element.innerHTML = `
-                <img data-foto src=${this.src} alt=${this.alt}>
-                <h3 class="studio__item-subtitle">${this.title}</h3>
-                <div class="studio__item-descr">${this.descr}</div>
-                <div class="studio__item-divider"></div>
-                <div class="studio__item-price">
-                    <div class="studio__item-cost">Price:</div>
-                    <div class="studio__item-total"><span>${this.price}</span> rub/hour</div>
-                </div>
-            `;
-
-            this.parent.append(element);
-
-        }
-    }
-
-    new StudioCards(
-        "images/A170_2.jpg",
-        "A170",
-        'Studio A170',
-        "170 m2<br>Cyclorama 8х5 m<br>Power connector 32А<br>Power connector 63А<br>Make-up artist's workplace<br>4 x Profoto D1",
-        3000,
-        '.container_studio',
-    ).render();
-    
-    new StudioCards(
-        "images/A120_4.jpg",
-        "A120",
-        'Studio A120',
-        "A room with white walls and a large cyclorama is a classic solution for a photo studio.<br><br>120 m2<br>Circular cyclorama 6x7 m<br>4 x Profoto D1<br>Ceilings 5m<br>Windows along the entire length of the hall<br>Spacious dedicated space for makeup artist work<br>Power connector 32A<br>Grunge wall, which effectively contrasts with the general interior of the hall<br>Audio system",
-        2200,
-        '.container_studio',
-    ).render();
-
-    new StudioCards(
-        "images/A85_5.jpg",
-        "A85",
-        'Studio A185',
-        "85 m2<br>Cyclorama 5x5 m<br>Profoto<br>Dark wood floors<br>Power connector 32А<br>Dedicated dressing area<br>Grunge wall from the time of the building<br>3 x Profoto D1",
-        1700,
-        '.container_studio',
-    ).render();
 
 
 
