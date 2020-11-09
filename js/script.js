@@ -74,53 +74,45 @@ window.addEventListener('DOMContentLoaded', () => {
             this.wrapper = wrapper;
             this.src = src;
             this.alt = alt;
-            // this.classes = classes;
             this.parent = document.querySelector(parentSelector);
         }
 
         render() {
             const element = document.createElement('div');
 
-            // if (this.classes.length === 0) {
-            //     this.classes = 'studio__slider-inner';
-            //     element.classList.add(this.classes);
-            // } else {
-            //     this.classes.forEach(className => element.classList.add(className));
-            // }
+            element.classList.add('studio__slider-wrapper');
 
-            // this.src.forEach(item => element.classList.add(item));
+            for (let i = 0; i < this.src.length; i++) {
+                element.innerHTML = `
+                    <div class="studio__slider-inner">
+                        <div class=${this.wrapper}>
+                            <img src=${this.src[0]} alt=${this.alt}>
+                        </div>
+                        <div class=${this.wrapper}>
+                            <img src=${this.src[1]} alt=${this.alt}>
+                        </div>
+                        <div class=${this.wrapper}>
+                            <img src=${this.src[2]} alt=${this.alt}>
+                        </div>
+                        <div class=${this.wrapper}>
+                            <img src=${this.src[3]} alt=${this.alt}>
+                        </div>
+                        <div class=${this.wrapper}>
+                            <img src=${this.src[4]} alt=${this.alt}>
+                        </div>
+                    </div>                    
+                `;
+            }
 
-            element.classList.add('studio__slider-inner');
+            // this.src.forEach(item => {
+            //     element.innerHTML = `
+            //         <div class=${this.wrapper}>
+            //             <img src=${item} alt=${this.alt}>
+            //         </div>
+            //     `;
+            // });
+            // console.log(this.src);
 
-            this.src.forEach(item => {
-                console.log(element.innerHTML = `
-                    <div class=${this.wrapper}>
-                        <img src=${item} alt=${this.alt}>
-                    </div>
-                `);
-            });
-
-            console.log(this.src);
-
-            // element.classList.add('studio__slider-inner');
-            // element.innerHTML = `
-            //     <div class=${this.wrapper}>
-            //         <img src=${this.src} alt=${this.alt}>
-            //     </div>
-            //     <div class=${this.wrapper}>
-            //         <img src=${this.src} alt=${this.alt}>
-            //     </div>
-            //     <div class=${this.wrapper}>
-            //         <img src=${this.src} alt=${this.alt}>
-            //     </div>
-            //     <div class=${this.wrapper}>
-            //         <img src=${this.src} alt=${this.alt}>
-            //     </div>
-            //     <div class=${this.wrapper}>
-            //         <img src=${this.src} alt=${this.alt}>
-            //     </div>
-                
-            // `;
             this.parent.append(element);
         }
     }
@@ -128,13 +120,24 @@ window.addEventListener('DOMContentLoaded', () => {
     new SliderCards(
         "studio__slide",
         "FotoStudio_A170",
-        ".studio__slider-wrapper",
+        ".studio__slider",
         "images/studio_A170/A170.jpg",
         "images/studio_A170/A170_2.jpg",
         "images/studio_A170/A170_3.jpg",
         "images/studio_A170/A170_4.jpg",
         "images/studio_A170/A170_5.jpg",
     ).render();
+
+    // new SliderCards(
+    //     "studio__slide",
+    //     "FotoStudio_A120",
+    //     ".studio__slider",
+    //     "images/studio_A120/A120.jpg",
+    //     "images/studio_A120/A120_2.jpg",
+    //     "images/studio_A120/A120_3.jpg",
+    //     "images/studio_A120/A120_4.jpg",
+    //     "images/studio_A120/A120_5.jpg",
+    // ).render();
 
    
 
