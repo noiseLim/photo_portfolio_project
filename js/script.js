@@ -82,27 +82,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
             element.classList.add('studio__slider-wrapper');
 
-            for (let i = 0; i < this.src.length; i++) {
-                element.innerHTML = `
-                    <div class="studio__slider-inner">
-                        <div class=${this.wrapper}>
-                            <img src=${this.src[0]} alt=${this.alt}>
-                        </div>
-                        <div class=${this.wrapper}>
-                            <img src=${this.src[1]} alt=${this.alt}>
-                        </div>
-                        <div class=${this.wrapper}>
-                            <img src=${this.src[2]} alt=${this.alt}>
-                        </div>
-                        <div class=${this.wrapper}>
-                            <img src=${this.src[3]} alt=${this.alt}>
-                        </div>
-                        <div class=${this.wrapper}>
-                            <img src=${this.src[4]} alt=${this.alt}>
-                        </div>
-                    </div>                    
-                `;
-            }
+            element.innerHTML = `
+                <div class="studio__slider-inner">
+                    <div class=${this.wrapper}>
+                        <img src=${this.src[0]} alt=${this.alt}>
+                    </div>
+                    <div class=${this.wrapper}>
+                        <img src=${this.src[1]} alt=${this.alt}>
+                    </div>
+                    <div class=${this.wrapper}>
+                        <img src=${this.src[2]} alt=${this.alt}>
+                    </div>
+                    <div class=${this.wrapper}>
+                        <img src=${this.src[3]} alt=${this.alt}>
+                    </div>
+                    <div class=${this.wrapper}>
+                        <img src=${this.src[4]} alt=${this.alt}>
+                    </div>
+                </div>                    
+            `;
 
             // this.src.forEach(item => {
             //     element.innerHTML = `
@@ -116,6 +114,20 @@ window.addEventListener('DOMContentLoaded', () => {
             this.parent.append(element);
         }
     }
+
+    // function showSliderOne() {
+    //     new SliderCards(
+    //         "studio__slide",
+    //         "FotoStudio_A170",
+    //         ".studio__slider",
+    //         "images/studio_A170/A170.jpg",
+    //         "images/studio_A170/A170_2.jpg",
+    //         "images/studio_A170/A170_3.jpg",
+    //         "images/studio_A170/A170_4.jpg",
+    //         "images/studio_A170/A170_5.jpg",
+    //     ).render();
+    // }
+
 
     new SliderCards(
         "studio__slide",
@@ -139,21 +151,32 @@ window.addEventListener('DOMContentLoaded', () => {
     //     "images/studio_A120/A120_5.jpg",
     // ).render();
 
+    // new SliderCards(
+    //     "studio__slide",
+    //     "FotoStudio_A85",
+    //     ".studio__slider",
+    //     "images/studio_A85/A85.jpg",
+    //     "images/studio_A85/A85_2.jpg",
+    //     "images/studio_A85/A85_3.jpg",
+    //     "images/studio_A85/A85_4.jpg",
+    //     "images/studio_A85/A85_5.jpg",
+    // ).render();
+
    
 
 
     // modal studio
 
     const modalBlock = document.querySelector('.modal_studio'),
-          modalContent = document.querySelectorAll('[data-foto]');
+          modalContent = document.querySelectorAll('[data-foto]'),
+          studioItem = document.querySelectorAll('.studio__item');
           
 
     function openModalFoto() {
         modalBlock.classList.add('show');
         modalBlock.classList.remove('hide');
         document.body.style.overflow = 'hidden';
-        // modalBlock.style.display = 'block';
-        // modalBlock.style.display = 'none';
+
     }
 
     function closeModalFoto() {
@@ -162,9 +185,15 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    modalContent.forEach(btn => {
-        btn.addEventListener('click', openModalFoto);
+    // modalContent.forEach(btn => {
+    //     btn.addEventListener('click', openModalFoto, showSliderOne);
+    // });
+
+    modalContent[0].addEventListener('click', () => {
+        openModalFoto();
+        // showSliderOne();
     });
+    
 
     modalBlock.addEventListener('click', (e) => {
         if (e.target === modalBlock) {
@@ -186,8 +215,8 @@ window.addEventListener('DOMContentLoaded', () => {
           next = document.querySelector('.studio__slider-next'),
           total = document.querySelector('#total'),
           current = document.querySelector('#current'),
-          slidesWrapper = document.querySelector('.studio__slider-wrapper'),
-          slidesField = document.querySelector('.studio__slider-inner'),
+          slidesWrapper = document.querySelectorAll('.studio__slider-wrapper'),
+          slidesField = document.querySelectorAll('.studio__slider-inner'),
           width = window.getComputedStyle(slider).width;
         //   width = window.getComputedStyle(slidesWrapper).getPropertyValue('width');
         //   width = '800px';
@@ -203,11 +232,50 @@ window.addEventListener('DOMContentLoaded', () => {
         current.textContent = slideIndex;
     }
 
-    slidesField.style.width = 100 * slides.length + '%';
-    slidesField.style.display = 'flex';
-    slidesField.style.transition = '0.5s all';
+    slidesField.forEach(item => {
+        item.style.width = 100 * slides.length + '%';
+        item.style.display = 'flex';
+        item.style.transition = '0.5s all';
 
-    slidesWrapper.style.overflow = 'hidden';
+    });
+
+    // slidesField.style.width = 100 * slides.length + '%';
+    // slidesField.style.display = 'flex';
+    // slidesField.style.transition = '0.5s all';
+
+    slidesWrapper.forEach(item => {
+        item.style.overflow = 'hidden';
+    });
+
+    // slidesWrapper.style.overflow = 'hidden';
+
+    function hideSlider() {
+        slidesWrapper.forEach(item => {
+            item.classList.add('hide');
+            item.classList.remove('show');
+        });
+    }
+    hideSlider();
+
+    function showSlider(i = 0) {
+        slidesWrapper[i].classList.add('show');
+        slidesWrapper[i].classList.remove('hide');
+    }
+    showSlider();
+
+
+        // studioItem.addEventListener('click', (e) => {
+    //     if (e.target && e.target.classList.contains('[data-foto]')) {
+    //         modalContent.forEach ((item, i) => {
+    //             if (e.target == item) {
+    //                 hideSlider();
+    //                 showSlider(i);
+    //             }
+    //         });
+    //     }
+    // });
+
+
 
     slides.forEach(slide => {
         slide.style.width = width;
@@ -282,7 +350,11 @@ window.addEventListener('DOMContentLoaded', () => {
             offset += widthMode(width);
         }
 
-        slidesField.style.transform = `translateX(-${offset}px)`;
+        slidesField.forEach(item => {
+            item.style.transform = `translateX(-${offset}px)`;
+        });
+
+        // slidesField.style.transform = `translateX(-${offset}px)`;
 
         if (slideIndex == slides.length) {
             slideIndex = 1;
@@ -301,7 +373,11 @@ window.addEventListener('DOMContentLoaded', () => {
             offset -= widthMode(width);
         }
 
-        slidesField.style.transform = `translateX(-${offset}px)`;
+        slidesField.forEach(item => {
+            item.style.transform = `translateX(-${offset}px)`;
+        });
+
+        // slidesField.style.transform = `translateX(-${offset}px)`;
 
         if (slideIndex == 1) {
             slideIndex = slides.length;
@@ -320,12 +396,35 @@ window.addEventListener('DOMContentLoaded', () => {
             slideIndex = slideTo;
             offset = widthMode(width) * (slideTo - 1);
 
-            slidesField.style.transform = `translateX(-${offset}px)`;
+            slidesField.forEach(item => {
+                item.style.transform = `translateX(-${offset}px)`;
+            });
+
+            // slidesField.style.transform = `translateX(-${offset}px)`;
 
             nilDecoration();
             opacityMode();
         });
     });
+
+
+    // function showSlider(i) {
+    //     slidesWrapper[i].classList.add('show');
+    //     slidesWrapper[i].classList.remove('hide');
+    // }
+    // hideSlider();
+    // showSlider();
+
+    // studioItem.addEventListener('click', (e) => {
+    //     if (e.target && e.target.classList.contains('[data-foto]')) {
+    //         modalContent.forEach ((item, i) => {
+    //             if (e.target == item) {
+    //                 hideSlider();
+    //                 showSlider(i);
+    //             }
+    //         });
+    //     }
+    // });
 
 
 
