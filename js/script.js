@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
     new StudioCards(
         "images/A85_5.jpg",
         "A85",
-        'Studio A185',
+        'Studio A85',
         "85 m2<br>Cyclorama 5x5 m<br>Profoto<br>Dark wood floors<br>Power connector 32А<br>Dedicated dressing area<br>Grunge wall from the time of the building<br>3 x Profoto D1",
         1700,
         '.container_studio',
@@ -109,25 +109,11 @@ window.addEventListener('DOMContentLoaded', () => {
             //         </div>
             //     `;
             // });
-            // console.log(this.src);
+            console.log(this.src);
 
             this.parent.append(element);
         }
     }
-
-    // function showSliderOne() {
-    //     new SliderCards(
-    //         "studio__slide",
-    //         "FotoStudio_A170",
-    //         ".studio__slider",
-    //         "images/studio_A170/A170.jpg",
-    //         "images/studio_A170/A170_2.jpg",
-    //         "images/studio_A170/A170_3.jpg",
-    //         "images/studio_A170/A170_4.jpg",
-    //         "images/studio_A170/A170_5.jpg",
-    //     ).render();
-    // }
-
 
     new SliderCards(
         "studio__slide",
@@ -140,27 +126,27 @@ window.addEventListener('DOMContentLoaded', () => {
         "images/studio_A170/A170_5.jpg",
     ).render();
 
-    // new SliderCards(
-    //     "studio__slide",
-    //     "FotoStudio_A120",
-    //     ".studio__slider",
-    //     "images/studio_A120/A120.jpg",
-    //     "images/studio_A120/A120_2.jpg",
-    //     "images/studio_A120/A120_3.jpg",
-    //     "images/studio_A120/A120_4.jpg",
-    //     "images/studio_A120/A120_5.jpg",
-    // ).render();
+    new SliderCards(
+        "studio__slide",
+        "FotoStudio_A120",
+        ".studio__slider",
+        "images/studio_A120/A120.jpg",
+        "images/studio_A120/A120_2.jpg",
+        "images/studio_A120/A120_3.jpg",
+        "images/studio_A120/A120_4.jpg",
+        "images/studio_A120/A120_5.jpg",
+    ).render();
 
-    // new SliderCards(
-    //     "studio__slide",
-    //     "FotoStudio_A85",
-    //     ".studio__slider",
-    //     "images/studio_A85/A85.jpg",
-    //     "images/studio_A85/A85_2.jpg",
-    //     "images/studio_A85/A85_3.jpg",
-    //     "images/studio_A85/A85_4.jpg",
-    //     "images/studio_A85/A85_5.jpg",
-    // ).render();
+    new SliderCards(
+        "studio__slide",
+        "FotoStudio_A85",
+        ".studio__slider",
+        "images/studio_A85/A85.jpg",
+        "images/studio_A85/A85_2.jpg",
+        "images/studio_A85/A85_3.jpg",
+        "images/studio_A85/A85_4.jpg",
+        "images/studio_A85/A85_5.jpg",
+    ).render();
 
    
 
@@ -169,7 +155,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const modalBlock = document.querySelector('.modal_studio'),
           modalContent = document.querySelectorAll('[data-foto]'),
-          studioItem = document.querySelectorAll('.studio__item');
+          studioItem = document.querySelector('.container_studio');
           
 
     function openModalFoto() {
@@ -184,15 +170,31 @@ window.addEventListener('DOMContentLoaded', () => {
         modalBlock.classList.remove('show');
         document.body.style.overflow = '';
     }
+    openModalFoto();
+    closeModalFoto();
+
+
+        // studioItem.addEventListener('click', (e) => {
+    //     if (e.target && e.target.classList.contains('[data-foto]')) {
+    //         modalContent.forEach ((item, i) => {
+    //             if (e.target == item) {
+    //                 hideSlider();
+    //                 showSlider(i);
+    //             }
+    //         });
+    //     }
+    // });
 
     // modalContent.forEach(btn => {
     //     btn.addEventListener('click', openModalFoto, showSliderOne);
     // });
 
-    modalContent[0].addEventListener('click', () => {
-        openModalFoto();
-        // showSliderOne();
-    });
+    // modalContent.addEventListener('click', () => {
+    //     openModalFoto();
+    //     // showSliderOne();
+    // });
+
+
     
 
     modalBlock.addEventListener('click', (e) => {
@@ -263,17 +265,27 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     showSlider();
 
-
-        // studioItem.addEventListener('click', (e) => {
+    // modalContent.addEventListener('click', (e) => {
     //     if (e.target && e.target.classList.contains('[data-foto]')) {
-    //         modalContent.forEach ((item, i) => {
+    //         modalContent.forEach((item, i) => {
     //             if (e.target == item) {
+    //                 openModalFoto();
     //                 hideSlider();
     //                 showSlider(i);
     //             }
     //         });
+    //     } else {
+    //         console.log('error');
     //     }
     // });
+
+    modalContent.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            openModalFoto();
+            hideSlider();
+            showSlider(i);
+        });
+    });
 
 
 
@@ -407,24 +419,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-    // function showSlider(i) {
-    //     slidesWrapper[i].classList.add('show');
-    //     slidesWrapper[i].classList.remove('hide');
-    // }
-    // hideSlider();
-    // showSlider();
-
-    // studioItem.addEventListener('click', (e) => {
-    //     if (e.target && e.target.classList.contains('[data-foto]')) {
-    //         modalContent.forEach ((item, i) => {
-    //             if (e.target == item) {
-    //                 hideSlider();
-    //                 showSlider(i);
-    //             }
-    //         });
-    //     }
-    // });
 
 
 
