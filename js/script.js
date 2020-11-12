@@ -173,29 +173,9 @@ window.addEventListener('DOMContentLoaded', () => {
     openModalFoto();
     closeModalFoto();
 
-
-        // studioItem.addEventListener('click', (e) => {
-    //     if (e.target && e.target.classList.contains('[data-foto]')) {
-    //         modalContent.forEach ((item, i) => {
-    //             if (e.target == item) {
-    //                 hideSlider();
-    //                 showSlider(i);
-    //             }
-    //         });
-    //     }
-    // });
-
     // modalContent.forEach(btn => {
     //     btn.addEventListener('click', openModalFoto, showSliderOne);
     // });
-
-    // modalContent.addEventListener('click', () => {
-    //     openModalFoto();
-    //     // showSliderOne();
-    // });
-
-
-    
 
     modalBlock.addEventListener('click', (e) => {
         if (e.target === modalBlock) {
@@ -219,6 +199,7 @@ window.addEventListener('DOMContentLoaded', () => {
           current = document.querySelector('#current'),
           slidesWrapper = document.querySelectorAll('.studio__slider-wrapper'),
           slidesField = document.querySelectorAll('.studio__slider-inner'),
+          getParent = document.querySelector('.studio__slide').parentElement.parentElement,
           width = window.getComputedStyle(slider).width;
         //   width = window.getComputedStyle(slidesWrapper).getPropertyValue('width');
         //   width = '800px';
@@ -226,22 +207,35 @@ window.addEventListener('DOMContentLoaded', () => {
     let slideIndex = 1,
         offset = 0;
 
-    if (slides.length < 10) {
-        total.textContent = `0${slides.length}`;
+    console.log(getParent);
+
+    function getClassParent() {
+        // const getParent = document.querySelector('.studio__slide').parentElement.parentElement;
+
+        if (getParent.classList.contains('show')) {
+
+        }
+            
+    }
+
+    console.log(getClassParent());
+
+    if (getClassParent() < 10) {
+        total.textContent = `0${getClassParent()}`;
         current.textContent = `0${slideIndex}`;
     } else {
-        total.textContent = slides.length;
+        total.textContent = getClassParent();
         current.textContent = slideIndex;
     }
 
     slidesField.forEach(item => {
-        item.style.width = 100 * slides.length + '%';
+        item.style.width = 100 * getClassParent() + '%';
         item.style.display = 'flex';
         item.style.transition = '0.5s all';
 
     });
 
-    // slidesField.style.width = 100 * slides.length + '%';
+    // slidesField.style.width = 100 * getClassParent() + '%';
     // slidesField.style.display = 'flex';
     // slidesField.style.transition = '0.5s all';
 
@@ -264,20 +258,6 @@ window.addEventListener('DOMContentLoaded', () => {
         slidesWrapper[i].classList.remove('hide');
     }
     showSlider();
-
-    // modalContent.addEventListener('click', (e) => {
-    //     if (e.target && e.target.classList.contains('[data-foto]')) {
-    //         modalContent.forEach((item, i) => {
-    //             if (e.target == item) {
-    //                 openModalFoto();
-    //                 hideSlider();
-    //                 showSlider(i);
-    //             }
-    //         });
-    //     } else {
-    //         console.log('error');
-    //     }
-    // });
 
     modalContent.forEach((item, i) => {
         item.addEventListener('click', () => {
@@ -313,7 +293,7 @@ window.addEventListener('DOMContentLoaded', () => {
     `;
     slider.append(indicators);
 
-    for (let i = 0; i < slides.length; i++) {
+    for (let i = 0; i < getClassParent(); i++) {
         const dot = document.createElement('li');
         dot.setAttribute('data-slide-to', i + 1);
         dot.style.cssText = `
@@ -344,7 +324,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function nilDecoration() {
-        if (slides.length < 10) {
+        if (getClassParent() < 10) {
             current.textContent = `0${slideIndex}`;
         } else {
             current.textContent = slideIndex;
@@ -356,7 +336,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     next.addEventListener('click', () => {
-        if (offset == widthMode(width) * (slides.length - 1)) {
+        if (offset == widthMode(width) * (getClassParent() - 1)) {
             offset = 0;
         } else {
             offset += widthMode(width);
@@ -368,7 +348,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // slidesField.style.transform = `translateX(-${offset}px)`;
 
-        if (slideIndex == slides.length) {
+        if (slideIndex == getClassParent()) {
             slideIndex = 1;
         } else {
             slideIndex++;
@@ -380,7 +360,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     prev.addEventListener('click', () => {
         if (offset == 0) {
-            offset = widthMode(width) * (slides.length - 1); 
+            offset = widthMode(width) * (getClassParent() - 1); 
         } else {
             offset -= widthMode(width);
         }
@@ -392,7 +372,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // slidesField.style.transform = `translateX(-${offset}px)`;
 
         if (slideIndex == 1) {
-            slideIndex = slides.length;
+            slideIndex = getClassParent();
         } else {
             slideIndex--;
         }
