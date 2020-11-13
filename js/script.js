@@ -101,6 +101,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>                    
             `;
+            this.parent.append(element);
 
             // this.src.forEach(item => {
             //     element.innerHTML = `
@@ -109,9 +110,6 @@ window.addEventListener('DOMContentLoaded', () => {
             //         </div>
             //     `;
             // });
-            console.log(this.src);
-
-            this.parent.append(element);
         }
     }
 
@@ -173,10 +171,6 @@ window.addEventListener('DOMContentLoaded', () => {
     openModalFoto();
     closeModalFoto();
 
-    // modalContent.forEach(btn => {
-    //     btn.addEventListener('click', openModalFoto, showSliderOne);
-    // });
-
     modalBlock.addEventListener('click', (e) => {
         if (e.target === modalBlock) {
             closeModalFoto();
@@ -202,53 +196,50 @@ window.addEventListener('DOMContentLoaded', () => {
           getParent = document.querySelector('.studio__slide').parentElement.parentElement,
           width = window.getComputedStyle(slider).width;
         //   width = window.getComputedStyle(slidesWrapper).getPropertyValue('width');
-        //   width = '800px';
 
     let slideIndex = 1,
         offset = 0;
 
     console.log(getParent);
 
-    function getClassParent() {
-        // const getParent = document.querySelector('.studio__slide').parentElement.parentElement;
+    function getClassParent(cnt) {
+        return `${cnt}` / slidesWrapper.length;
 
-        if (getParent.classList.contains('show')) {
+        // I know this terrible solution but I have not idea how this realization. 
+        // Later I'm back this
 
-        }
+
+        // if (getParent.classList.contains('show')) {
+        // }
             
     }
 
-    console.log(getClassParent());
-
-    if (getClassParent() < 10) {
-        total.textContent = `0${getClassParent()}`;
+    if (getClassParent(slides.length) < 10) {
+        total.textContent = `0${getClassParent(slides.length)}`;
         current.textContent = `0${slideIndex}`;
     } else {
-        total.textContent = getClassParent();
+        total.textContent = getClassParent(slides.length);
         current.textContent = slideIndex;
     }
 
     slidesField.forEach(item => {
-        item.style.width = 100 * getClassParent() + '%';
+        item.style.width = 100 * getClassParent(slides.length) + '%';
         item.style.display = 'flex';
         item.style.transition = '0.5s all';
 
     });
 
-    // slidesField.style.width = 100 * getClassParent() + '%';
-    // slidesField.style.display = 'flex';
-    // slidesField.style.transition = '0.5s all';
-
     slidesWrapper.forEach(item => {
         item.style.overflow = 'hidden';
     });
-
-    // slidesWrapper.style.overflow = 'hidden';
 
     function hideSlider() {
         slidesWrapper.forEach(item => {
             item.classList.add('hide');
             item.classList.remove('show');
+        });
+        slides.forEach(item => {
+            item.classList.remove('count');
         });
     }
     hideSlider();
@@ -256,6 +247,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function showSlider(i = 0) {
         slidesWrapper[i].classList.add('show');
         slidesWrapper[i].classList.remove('hide');
+        slides[i].classList.add('count');
     }
     showSlider();
 
@@ -266,8 +258,6 @@ window.addEventListener('DOMContentLoaded', () => {
             showSlider(i);
         });
     });
-
-
 
     slides.forEach(slide => {
         slide.style.width = width;
@@ -293,7 +283,7 @@ window.addEventListener('DOMContentLoaded', () => {
     `;
     slider.append(indicators);
 
-    for (let i = 0; i < getClassParent(); i++) {
+    for (let i = 0; i < getClassParent(slides.length); i++) {
         const dot = document.createElement('li');
         dot.setAttribute('data-slide-to', i + 1);
         dot.style.cssText = `
@@ -324,7 +314,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function nilDecoration() {
-        if (getClassParent() < 10) {
+        if (getClassParent(slides.length) < 10) {
             current.textContent = `0${slideIndex}`;
         } else {
             current.textContent = slideIndex;
@@ -336,7 +326,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     next.addEventListener('click', () => {
-        if (offset == widthMode(width) * (getClassParent() - 1)) {
+        if (offset == widthMode(width) * (getClassParent(slides.length) - 1)) {
             offset = 0;
         } else {
             offset += widthMode(width);
@@ -344,11 +334,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
         slidesField.forEach(item => {
             item.style.transform = `translateX(-${offset}px)`;
+            // if (modalBlock.classList.contains('hide')) {
+            //     offset = 0;
+            // }
         });
 
-        // slidesField.style.transform = `translateX(-${offset}px)`;
-
-        if (slideIndex == getClassParent()) {
+        if (slideIndex == getClassParent(slides.length)) {
             slideIndex = 1;
         } else {
             slideIndex++;
@@ -360,19 +351,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
     prev.addEventListener('click', () => {
         if (offset == 0) {
-            offset = widthMode(width) * (getClassParent() - 1); 
+            offset = widthMode(width) * (getClassParent(slides.length) - 1); 
         } else {
             offset -= widthMode(width);
         }
 
         slidesField.forEach(item => {
             item.style.transform = `translateX(-${offset}px)`;
+            // if (modalBlock.classList.contains('hide')) {
+            //     offset = 0;
+            // }
         });
 
-        // slidesField.style.transform = `translateX(-${offset}px)`;
-
         if (slideIndex == 1) {
-            slideIndex = getClassParent();
+            slideIndex = getClassParent(slides.length);
         } else {
             slideIndex--;
         }
@@ -390,9 +382,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
             slidesField.forEach(item => {
                 item.style.transform = `translateX(-${offset}px)`;
+                // if (modalBlock.classList.contains('hide')) {
+                //     offset = 0;
+                // }
             });
-
-            // slidesField.style.transform = `translateX(-${offset}px)`;
 
             nilDecoration();
             opacityMode();
