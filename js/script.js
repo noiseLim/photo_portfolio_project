@@ -240,8 +240,8 @@ window.addEventListener('DOMContentLoaded', () => {
             item.style.transform = `translateX(0px)`;
         });
         offset = 0;
-        current.textContent = `01`;
         slideIndex = 1;
+        current.textContent = `0${slideIndex}`;
 
         opacityMode();
 
