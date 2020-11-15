@@ -149,13 +149,82 @@ window.addEventListener('DOMContentLoaded', () => {
    
 
 
-    // modal studio
+    // slider
+
+    const slides = document.querySelectorAll('.studio__slide'),
+          slider = document.querySelector('.studio__slider'),
+          prev = document.querySelector('.studio__slider-prev'),
+          next = document.querySelector('.studio__slider-next'),
+          total = document.querySelector('#total'),
+          current = document.querySelector('#current'),
+          slidesWrapper = document.querySelectorAll('.studio__slider-wrapper'),
+          slidesField = document.querySelectorAll('.studio__slider-inner'),
+          getParent = document.querySelector('.studio__slide').parentElement.parentElement,
+          width = window.getComputedStyle(slider).width;
+        //   width = window.getComputedStyle(slidesWrapper).getPropertyValue('width');
+
+        let slideIndex = 1,
+        offset = 0;
 
     const modalBlock = document.querySelector('.modal_studio'),
-          modalContent = document.querySelectorAll('[data-foto]'),
-          studioItem = document.querySelector('.container_studio');
-          
+          modalContent = document.querySelectorAll('[data-foto]');
 
+          const indicators = document.createElement('ol'),
+          dots = [];
+
+    indicators.classList.add('carousel-indicators');
+    indicators.style.cssText = `
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        margin-right: 15%;
+        margin-left: 15%;
+        list-style: none;
+    `;
+    slider.append(indicators);
+
+    for (let i = 0; i < getClassParent(slides.length); i++) {
+        const dot = document.createElement('li');
+        dot.setAttribute('data-slide-to', i + 1);
+        dot.style.cssText = `
+            box-sizing: content-box;
+            flex: 0 1 auto;
+            width: 30px;
+            height: 6px;
+            margin-right: 3px;
+            margin-left: 3px;
+            cursor: pointer;
+            background-color: #fff;
+            background-clip: padding-box;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            opacity: .5;
+            transition: opacity .6s ease;
+        `;
+        if (i == 0) {
+            dot.style.opacity = 1;
+        }
+        indicators.append(dot);
+        dots.push(dot);
+    }
+
+    function opacityMode() {
+        dots.forEach(dot => dot.style.opacity = '.5');
+        dots[slideIndex - 1].style.opacity = 1;
+    }
+
+    function nilDecoration() {
+        if (getClassParent(slides.length) < 10) {
+            current.textContent = `0${slideIndex}`;
+        } else {
+            current.textContent = slideIndex;
+        }
+    }
+          
     function openModalFoto() {
         modalBlock.classList.add('show');
         modalBlock.classList.remove('hide');
@@ -167,6 +236,15 @@ window.addEventListener('DOMContentLoaded', () => {
         modalBlock.classList.add('hide');
         modalBlock.classList.remove('show');
         document.body.style.overflow = '';
+        slidesField.forEach(item => {
+            item.style.transform = `translateX(0px)`;
+        });
+        offset = 0;
+        current.textContent = `01`;
+        slideIndex = 1;
+
+        opacityMode();
+
     }
     openModalFoto();
     closeModalFoto();
@@ -182,23 +260,6 @@ window.addEventListener('DOMContentLoaded', () => {
             closeModalFoto();
         }
     });
-
-    // slider
-
-    const slides = document.querySelectorAll('.studio__slide'),
-          slider = document.querySelector('.studio__slider'),
-          prev = document.querySelector('.studio__slider-prev'),
-          next = document.querySelector('.studio__slider-next'),
-          total = document.querySelector('#total'),
-          current = document.querySelector('#current'),
-          slidesWrapper = document.querySelectorAll('.studio__slider-wrapper'),
-          slidesField = document.querySelectorAll('.studio__slider-inner'),
-          getParent = document.querySelector('.studio__slide').parentElement.parentElement,
-          width = window.getComputedStyle(slider).width;
-        //   width = window.getComputedStyle(slidesWrapper).getPropertyValue('width');
-
-    let slideIndex = 1,
-        offset = 0;
 
     console.log(getParent);
 
@@ -265,62 +326,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     slider.style.position = 'relative';
 
-    const indicators = document.createElement('ol'),
-          dots = [];
-
-    indicators.classList.add('carousel-indicators');
-    indicators.style.cssText = `
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 15;
-        display: flex;
-        justify-content: center;
-        margin-right: 15%;
-        margin-left: 15%;
-        list-style: none;
-    `;
-    slider.append(indicators);
-
-    for (let i = 0; i < getClassParent(slides.length); i++) {
-        const dot = document.createElement('li');
-        dot.setAttribute('data-slide-to', i + 1);
-        dot.style.cssText = `
-            box-sizing: content-box;
-            flex: 0 1 auto;
-            width: 30px;
-            height: 6px;
-            margin-right: 3px;
-            margin-left: 3px;
-            cursor: pointer;
-            background-color: #fff;
-            background-clip: padding-box;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            opacity: .5;
-            transition: opacity .6s ease;
-        `;
-        if (i == 0) {
-            dot.style.opacity = 1;
-        }
-        indicators.append(dot);
-        dots.push(dot);
-    }
-
-    function opacityMode() {
-        dots.forEach(dot => dot.style.opacity = '.5');
-        dots[slideIndex - 1].style.opacity = 1;
-    }
-
-    function nilDecoration() {
-        if (getClassParent(slides.length) < 10) {
-            current.textContent = `0${slideIndex}`;
-        } else {
-            current.textContent = slideIndex;
-        }
-    }
-
     function widthMode(property) {
         return +property.replace(/\D/g, '');
     }
@@ -334,9 +339,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         slidesField.forEach(item => {
             item.style.transform = `translateX(-${offset}px)`;
-            // if (modalBlock.classList.contains('hide')) {
-            //     offset = 0;
-            // }
         });
 
         if (slideIndex == getClassParent(slides.length)) {
@@ -358,9 +360,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         slidesField.forEach(item => {
             item.style.transform = `translateX(-${offset}px)`;
-            // if (modalBlock.classList.contains('hide')) {
-            //     offset = 0;
-            // }
         });
 
         if (slideIndex == 1) {
@@ -382,9 +381,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
             slidesField.forEach(item => {
                 item.style.transform = `translateX(-${offset}px)`;
-                // if (modalBlock.classList.contains('hide')) {
-                //     offset = 0;
-                // }
             });
 
             nilDecoration();
