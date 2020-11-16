@@ -395,44 +395,46 @@
 		</div>
 	</section>
 	<section id="section-contact-us">
-		<div class="col-6" id="contact-us-left">
-			<div id="contact-us">
-				<h2>8901 Marmora road,<br> Glasgow, D04 89GR<br>+1 (800) 2345 6789</h2>
-				<h1>CONTACT US</h1>
+		<div class="container_contact">
+			<div class="col-6" id="contact-us-left">
+				<div id="contact-us">
+					<h2>8901 Marmora road,<br> Glasgow, D04 89GR<br>+1 (800) 2345 6789</h2>
+					<h1>CONTACT US</h1>
+				</div>
+				<div id="contact-form">
+					<div class="form-row float-clearing">
+						<div class="col-8">
+							<input type="text" name="name" id="name" placeholder="Your name*">
+						</div>
+					</div>
+					<div class="form-row float-clearing">
+						<div class="col-8">
+							<input type="email" name="email" id="email" placeholder="Your email*">
+						</div>
+					</div>
+					<div class="form-row float-clearing">	
+						<div class="col-8">
+							<textarea name="text" placeholder="Your message*"></textarea>
+						</div>
+					</div>	
+					<div class="form-row">
+						<div class="col-4">
+							<input type="submit" value="Send">
+						</div>
+					</div>
+				</div>
 			</div>
-			<div id="contact-form">
-				<div class="form-row float-clearing">
-					<div class="col-8">
-						<input type="text" name="name" id="name" placeholder="Your name*">
-					</div>
+			<div class="col-6" id="map-right">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173294.15233626694!2d39.4879149119806!3d47.26115615573948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3c777c3b4b6ef%3A0x8248b451e48b4d04!2z0KDQvtGB0YLQvtCyLdC90LAt0JTQvtC90YMsINCg0L7RgdGC0L7QstGB0LrQsNGPINC-0LHQuy4!5e0!3m2!1sru!2sru!4v1600673718483!5m2!1sru!2sru" width="450" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				<div class="col-6" id="social-links">
+					<ul>
+						<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></i></a></li>
+						<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></i></a></li>
+						<li><a href="#"><ion-icon name="logo-youtube"></ion-icon></i></a></li>
+						<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></i></a></li>
+						<li><a href="#"><ion-icon name="logo-pinterest"></ion-icon></i></a></li>
+		
 				</div>
-				<div class="form-row float-clearing">
-					<div class="col-8">
-						<input type="email" name="email" id="email" placeholder="Your email*">
-					</div>
-				</div>
-				<div class="form-row float-clearing">	
-					<div class="col-8">
-						<textarea name="text" placeholder="Your message*"></textarea>
-					</div>
-				</div>	
-				<div class="form-row">
-					<div class="col-4">
-						<input type="submit" value="Send">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-6" id="map-right">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173294.15233626694!2d39.4879149119806!3d47.26115615573948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3c777c3b4b6ef%3A0x8248b451e48b4d04!2z0KDQvtGB0YLQvtCyLdC90LAt0JTQvtC90YMsINCg0L7RgdGC0L7QstGB0LrQsNGPINC-0LHQuy4!5e0!3m2!1sru!2sru!4v1600673718483!5m2!1sru!2sru" width="450" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-			<div class="col-6" id="social-links">
-				<ul>
-					<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></i></a></li>
-					<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></i></a></li>
-					<li><a href="#"><ion-icon name="logo-youtube"></ion-icon></i></a></li>
-					<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></i></a></li>
-					<li><a href="#"><ion-icon name="logo-pinterest"></ion-icon></i></a></li>
-	
 			</div>
 		</div>
 	</section>
@@ -442,68 +444,20 @@
 			<p>Age limits 0+</p>
 		</div>
 	</footer>
+	<div class="modal">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<form action="#">
+                    <div data-close class="modal__close">&times;</div>
+                    <div class="modal__title">We’ll contact you as soon as possible!</div>
+                    <input required placeholder="Your name" name="name" type="second_text" class="modal__input">
+                    <input required placeholder="Your number phone" name="phone" type="phone" class="modal__input">
+                    <button class="btn btn_dark btn_min">Call me back</button>
+                </form>
+			</div>
+		</div>
+	</div>
 	<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
-
-				<!-- <div class="studio__slider-wrapper">
-					<div class="studio__slider-inner">
-						<div class="studio__slide">
-							<img src="images/studio_A170/A170.jpg" alt="A170">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A170/A170_2.jpg" alt="A170_2">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A170/A170_3.jpg" alt="A170_3">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A170/A170_4.jpg" alt="A170_4">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A170/A170_5.jpg" alt="A170_5">
-						</div>
-					</div>
-				</div> -->
-				<!-- <div class="studio__slider-wrapper">
-					<div class="studio__slider-inner">
-						<div class="studio__slide">
-							<img src="images/studio_A120/A120.jpg" alt="A120">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A120/A120_2.jpg" alt="A120_2">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A120/A120_3.jpg" alt="A120_3">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A120/A120_4.jpg" alt="A120_4">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A120/A120_5.jpg" alt="A120_5">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A120/A120_6.jpg" alt="A120_6">
-						</div>
-					</div>
-				</div>
-				<div class="studio__slider-wrapper">
-					<div class="studio__slider-inner">
-						<div class="studio__slide">
-							<img src="images/studio_A85/A85.jpg" alt="A85">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A85/A85_2.jpg" alt="A85_2">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A85/A85_3.jpg" alt="A85_3">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A85/A85_4.jpg" alt="A85_4">
-						</div>
-						<div class="studio__slide">
-							<img src="images/studio_A85/A85_5.jpg" alt="A85_5">
-						</div>
-					</div>
-				</div> -->
