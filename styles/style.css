@@ -683,6 +683,58 @@ studio styles
     font-weight: 700;
 }
 
+/****************************
+Contact us mini
+*****************************/
+
+#section-сall_me_back {
+	/* padding: 50 0 0 0; */
+	padding: 0;
+	padding-top: 20px;
+}
+
+.container-сall_me_back {
+	/* background: #171717; */
+	padding: 0px 20px;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.order__form {
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.order__input {
+    width: 280px;
+    height: 50px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    padding: 0 20px;
+    outline: 0
+}
+
+#section-сall_me_back ::placeholder {
+	color: rgb(86, 78, 78);
+}
+
+input[type=contact],
+input[type=email],
+textarea {
+	/* width: 100%; */
+	padding: 5px;
+	/* background: rgb(74, 74, 68); */
+}
+
+.container-сall_me_back .btn_modal {
+    display: block;
+    width: 280px;
+}
 
 
 
@@ -1121,30 +1173,30 @@ Modal Foto style
     font-size: 18px;
     text-align: center;
     padding: 0 20px;
-    outline: 0
+	outline: 0;
 }
 
-.btn {
-    width: 220px;
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    font-size: 18px;
+.btn_modal {
     font-weight: 700;
-    border: 1px solid rgba(0, 0, 0, .2);
     box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
     cursor: pointer;
-    transition: .3s all;
-    outline: 0
+	height: 50px;
+	background-color: #303030;
+    color: rgba(255, 114, 0);
+    border: none
 }
 
-.modal .btn {
+.modal .btn_modal {
     display: block;
     width: 280px;
     margin: 0 auto
 }
+
+.modal ::placeholder {
+	color: rgb(86, 78, 78);
+}
+
+
 
 
 
