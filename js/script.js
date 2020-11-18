@@ -261,8 +261,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    console.log(getParent);
-
     function getClassParent(cnt) {
         return `${cnt}` / slidesWrapper.length;
 

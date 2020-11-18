@@ -58,29 +58,6 @@ img {
 	visibility: hidden;
 }
 
-/* .hide {
-	display: none;
-}
-
-.show {
-	display: block;
-}
-
-.fade {
-	animation-name: fade;
-    animation-duration: 0.7s;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0.1;
-    }
-
-    to {
-        opacity: 1;
-    }
-} */
-
 /****************************
 Header styles
 *****************************/
@@ -183,9 +160,7 @@ Button styles
 	margin-left: 35%;
 }
 
-.button:link,
-.button:visited,
-input[type=submit] {
+.button {
 	display: inline-block;
 	padding: 10px 25px;
 	text-decoration: none;
@@ -202,8 +177,7 @@ input[type=submit] {
 	font-weight: 500;
 }
 
-.button-contact:link,
-.button-contact:visited {
+.button-contact {
 	background: rgb(255, 114, 0);
 	color: #fff;
 	border: 2px solid rgb(255, 114, 0);
@@ -288,7 +262,24 @@ input[type=submit] {
 	color: #fff;
 	border: 3px solid rgb(255, 114, 0);
 	width: 150px;
+	display: inline-block;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: #171717;
+	border-radius: 30px;
+	transition: background-color 0.3s, border 0.3s;
+	font-weight: 600;
 }
+
+/* input[type=submit] {
+	display: inline-block;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: #171717;
+	border-radius: 30px;
+	transition: background-color 0.3s, border 0.3s;
+	font-weight: 600;
+} */
 
 input[type=submit]:hover,
 input[type=submit]:active {
@@ -684,24 +675,29 @@ studio styles
 }
 
 /****************************
-Contact us mini
+Call me back
 *****************************/
 
 #section-сall_me_back {
-	/* padding: 50 0 0 0; */
-	padding: 0;
-	padding-top: 20px;
+	padding: 30px 0 150px 0;
+}
+
+#section-сall_me_back .title_head h2 {
+	color: #171717;
+    font-weight: 300;
+    font-size: 2em;
+    text-transform: uppercase;
+
 }
 
 .container-сall_me_back {
-	/* background: #171717; */
 	padding: 0px 20px;
 	max-width: 1300px;
 	margin: 0 auto;
 }
 
 .order__form {
-    padding: 0 100px;
+    padding: 0 150px;
     display: flex;
     justify-content: space-between;
     align-items: center
@@ -726,14 +722,36 @@ Contact us mini
 input[type=contact],
 input[type=email],
 textarea {
-	/* width: 100%; */
 	padding: 5px;
-	/* background: rgb(74, 74, 68); */
 }
 
 .container-сall_me_back .btn_modal {
     display: block;
     width: 280px;
+}
+
+.order__form .button {
+	width: 220px;
+	height: 50px;
+	display: inline-block;
+	padding: 10px 25px;
+	text-decoration: none;
+	border-radius: 30px;
+	transition: background-color 0.3s, border 0.3s;
+	font-weight: 600;
+}
+
+.button-call_me {
+	background: rgb(255, 114, 0);
+	color:  #fff;
+	border: 2px solid rgb(255, 114, 0);
+}
+
+.button-call_me:hover,
+.button-call_me:active {
+	background: #fff;
+	border: 2px solid #171717;
+	color: #171717;
 }
 
 
@@ -744,7 +762,7 @@ Images-gallery styles
 
 #section-gallery {
 	padding-top: 50px;
-	padding-bottom: 150px;
+	padding: 50px 0 0 0;
 }
 
 .title_head {
