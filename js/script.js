@@ -167,7 +167,7 @@ window.addEventListener('DOMContentLoaded', () => {
         offset = 0;
 
     const modalBlock = document.querySelector('.modal_studio'),
-          modalContent = document.querySelectorAll('[data-foto]');
+          modalStudio = document.querySelectorAll('[data-foto]');
 
           const indicators = document.createElement('ol'),
           dots = [];
@@ -310,7 +310,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     showSlider();
 
-    modalContent.forEach((item, i) => {
+    modalStudio.forEach((item, i) => {
         item.addEventListener('click', () => {
             openModalFoto();
             hideSlider();
@@ -386,11 +386,50 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    //modal
 
+    const modalContent = document.querySelector('.modal'),
+          dataModal = document.querySelector('[data-modal]'),
+          dataClose = document.querySelector('[data-close]');
 
+    function closeModalContent() {
+        modalContent.classList.add('hide');
+        modalContent.classList.remove('show');
+        document.body.style.overflow = '';
+    }
 
+    function openModalContent() {
+        modalContent.classList.add('show');
+        modalContent.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+        clearInterval(modalsetInterval);
+    }
 
+    dataModal.addEventListener('click', openModalContent);
+    dataClose.addEventListener('click', closeModalContent);
 
+    document.addEventListener('keydown', (e) => {
+        if (e.code == 'Escape' && modalContent.classList.contains('show')) {
+            closeModalContent();
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target == modalContent || e.target.getAttribute('data-close') == '') {
+            closeModalContent();
+        }
+    });
+
+    const modalsetInterval = setInterval(openModalContent, 60000);
+
+    function showModalByScroll() {
+        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+            openModalContent();
+            window.removeEventListener('scroll', showModalByScroll);
+        }
+    }
+
+    window.addEventListener('scroll', showModalByScroll);
 
 
 
